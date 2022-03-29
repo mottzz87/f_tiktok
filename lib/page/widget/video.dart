@@ -39,7 +39,7 @@ class _VideoWidgetState extends State<VideoWidget> {
     _videoPlayerController.setLooping(true);
 
     App.bus.on<StopPlayEvent>().listen((event) {
-      _videoPlayerController.pause();
+      // _videoPlayerController.pause();
     });
   }
 

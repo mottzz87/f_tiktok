@@ -5,6 +5,8 @@ import 'package:f_tiktok/common/colors.dart';
 import 'package:get/get.dart';
 import 'package:f_tiktok/route/index.dart';
 
+// import 'package:requests/requests.dart';
+
 import 'home_tab_recommend.dart';
 
 class Home extends StatefulWidget {
@@ -24,10 +26,15 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   late double _screenWidth;
 
   @override
-  void initState() {
+  Future<void> initState() async {
     super.initState();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 2);
     _pageController = PageController(initialPage: 2, keepPage: true);
+    // var r = await Requests.get(
+    //     'http://127.0.0.1:4523/mock/697719/videos?page=1&pageSize=5&type=recommand');
+    // r.raiseForStatus();
+    // String body = r.content();
+    // print(body);
   }
 
   @override
